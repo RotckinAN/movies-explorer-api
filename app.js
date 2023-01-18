@@ -12,7 +12,7 @@ const { limiter } = require('./middlewares/rateLimit');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { allowedCorsMiddleware } = require('./middlewares/allowedCors');
 
-const { PORT = 3001, NODE_ENV, MONGODB_ADDRESS } = process.env;
+const { PORT = 3000, NODE_ENV, MONGODB_ADDRESS } = process.env;
 const mongoDBAddress = NODE_ENV === 'production' ? MONGODB_ADDRESS : 'mongodb://127.0.0.1:27017/bitfilmsdb';
 const app = express();
 
