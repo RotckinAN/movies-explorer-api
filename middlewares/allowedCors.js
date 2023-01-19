@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://manovieta.nomoredomains.club', // !
-  'http://manovieta.nomoredomains.club', // !
+  'https://manofilmai.nomoredomains.rocks/', // !
+  'http://manofilmai.nomoredomains.rocks/', // !
   'localhost:3000',
 ];
 
