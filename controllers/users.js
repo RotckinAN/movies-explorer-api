@@ -50,6 +50,7 @@ const login = async (req, res, next) => {
         maxAge: 3600000 * 24,
         httpOnly: true,
         sameSite: 'None',
+        secure: true,
       }).json({ message: 'Вход выполнен успешно' });
     }
 
