@@ -10,7 +10,10 @@ const { NotFound } = require('../errors/notFound');
 router.post('/signup', validateAuthentication, createUser);
 router.post('/signin', validateUserBody, login);
 router.get('/signout', (req, res) => {
-  res.clearCookie('jwt').json({ message: 'Выход' });
+  res.clearCookie('jwt', {
+    sameSite: 'None',
+    secure: true,
+  }).json({ message: 'Выход' });
 });
 
 router.use(auth);
