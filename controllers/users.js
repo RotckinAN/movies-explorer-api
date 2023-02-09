@@ -49,6 +49,7 @@ const login = async (req, res, next) => {
       return res.cookie('jwt', token, {
         maxAge: 3600000 * 24,
         httpOnly: true,
+        sameSite: 'None',
       }).json({ message: 'Вход выполнен успешно' });
     }
 

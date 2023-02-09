@@ -1,7 +1,7 @@
 const allowedCors = [
-  'https://manofilmai.nomoredomains.rocks/', // !
-  'http://manofilmai.nomoredomains.rocks/', // !
-  'localhost:3000',
+  'https://manofilmai.nomoredomains.rocks/',
+  'http://manofilmai.nomoredomains.rocks/',
+  'http://localhost:3000',
 ];
 
 const allowedCorsMiddleware = {
