@@ -50,7 +50,7 @@ const deleteMovie = async (req, res, next) => {
     const { movieId } = req.params;
     const userId = req.user._id;
 
-    const movie = await Movie.findById({ _id: movieId });
+    const movie = await Movie.findById({ movieId: movieId });
 
     if (movie === null) {
       throw new NotFound('Запрашиваемый фильм не найден');
