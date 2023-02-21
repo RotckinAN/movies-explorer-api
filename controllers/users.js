@@ -15,7 +15,14 @@ const createUser = async (req, res, next) => {
       email, password: hash, name,
     });
 
-    return res.status(201).json({
+    const payload = { _id: user._id };
+    const token = generateToken(payload);
+    return res.status(201).cookie('jwt', token, {
+      maxAge: 3600000 * 24,
+      httpOnly: true,
+      sameSite: 'None',
+      secure: true,
+    }).json({
       _id: user._id,
       email: user.email,
       name: user.name,
