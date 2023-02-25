@@ -104,6 +104,9 @@ const patchProfileInfo = async (req, res, next) => {
     if (err.name === 'ValidationError' || err.name === 'CastError') {
       return next(new BadRequest('Произошла ошибка, переданы некорректные данные'));
     }
+    if (err.message.indexOf('duplicate key error') !== -1) {
+      return next(new Conflict('Произошла ошибка, пользователь с таким email уже существует, введите новый email'));
+    }
     return next(err);
   }
 };
